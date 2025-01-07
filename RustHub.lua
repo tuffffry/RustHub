@@ -43,8 +43,6 @@ local Slider = mainTab:CreateSlider({
    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
             getgenv().WaitTime = Value
-    end
-})
 
 getgenv().WaitTime = 15
    -- The function that takes place when the slider changes
