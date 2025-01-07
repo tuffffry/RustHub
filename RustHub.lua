@@ -32,5 +32,22 @@ local Window = Rayfield:CreateWindow({
       Key = {"https://pastebin.com/raw/keQebBGM"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22"
    }
 })
-local Tab = Window:CreateTab("Main", "Album")
-      
+local MainTab = MainWindow:CreateTab("Main", "Album")
+      local Section = MainTab:CreateSection("Auto Farm")
+local Slider = MainTab:CreateSlider({
+   Name = "Loop Delay (Seconds)",
+   Range = {1, 120},
+   Increment = 1,
+   Suffix = "More Time = MoreSafe",
+   CurrentValue = 15,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+            getgenv().WaitTime = Value
+    end
+})
+
+getgenv().WaitTime = 15
+   -- The function that takes place when the slider changes
+   -- The variable (Value) is a number which correlates to the value the slider is currently at
+   end,
+})
