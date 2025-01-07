@@ -34,16 +34,3 @@ local Window = Rayfield:CreateWindow({
 })
 local mainTab = Window:CreateTab("Main", "Album")
 local Section = mainTab:CreateSection("Auto Farm")
-local Slider = mainTab:CreateSlider({
-   Name = "Loop Delay (Seconds)",
-   Range = {1, 120},
-   Increment = 1,
-   Suffix = "More Time = MoreSafe",
-   CurrentValue = 15,
-   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-         getgenv().WaitTime = Value
-   end,
-})
-
-getgenv().WaitTime = 15
