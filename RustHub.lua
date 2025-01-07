@@ -17,7 +17,7 @@ local Window = Rayfield:CreateWindow({
 
    Discord = {
       Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
-      Invite = "djsA2S2SCT", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      Invite = "djsA2S2SCT", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
 
@@ -33,7 +33,7 @@ local Window = Rayfield:CreateWindow({
    }
 })
 local mainTab = Window:CreateTab("Main", "Album")
-      local Section = mainTab:CreateSection("Auto Farm")
+local Section = mainTab:CreateSection("Auto Farm")
 local Slider = mainTab:CreateSlider({
    Name = "Loop Delay (Seconds)",
    Range = {1, 120},
@@ -42,10 +42,8 @@ local Slider = mainTab:CreateSlider({
    CurrentValue = 15,
    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-            getgenv().WaitTime = Value
-
-getgenv().WaitTime = 15
-   -- The function that takes place when the slider changes
-   -- The variable (Value) is a number which correlates to the value the slider is currently at
+         getgenv().WaitTime = Value
    end,
 })
+
+getgenv().WaitTime = 15
