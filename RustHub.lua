@@ -11,7 +11,7 @@ local Window = Rayfield:CreateWindow({
 
    ConfigurationSaving = {
       Enabled = false,
-      FolderName = saves, -- Create a custom folder for your hub/game
+      FolderName = "saves", -- Create a custom folder for your hub/game
       FileName = "RustHub"
    },
 
@@ -32,7 +32,7 @@ local Window = Rayfield:CreateWindow({
       Key = {"https://pastebin.com/raw/keQebBGM"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22"
    }
 })
-local MainTab = MainWindow:CreateTab("Main", "Album")
+local mainTab = Window:CreateTab("Main", "Album")
       local Section = MainTab:CreateSection("Auto Farm")
 local Slider = MainTab:CreateSlider({
    Name = "Loop Delay (Seconds)",
